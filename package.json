@@ -1,0 +1,11 @@
+{
+  "name": "github-action-creater",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:prakashio/github-action-creater.git",
+  "author": "Prakash <prakash@neemconsulting.com>",
+  "license": "MIT",
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
