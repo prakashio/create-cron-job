@@ -1,0 +1,18 @@
+name: '2021-05-27T08:05:14.438Z'
+'on':
+  schedule:
+    - cron: '4 * * * *'
+jobs:
+  publish:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: 'Checkout code'
+        uses: 'actions/checkout@v1'
+        with:
+          ref: 'master'
+      - name: 'Use Node.js 12.x'
+        uses: 'actions/setup-node@v1'
+        with:
+          node-version: '12.x'
+      - name: 'Run Schedule Publish'
+        run: 'node ./packages/studio/scripts/add.js'
