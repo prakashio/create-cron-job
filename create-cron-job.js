@@ -44,5 +44,5 @@ module.exports = (function createCronJob() {
    let yamlStr = yaml.dump(
       createCronTemplate({ name: now.toISOString(), cron: "4 * * * *" }), {forceQuotes: true});
 
-   fs.writeFileSync(Path.join(__dirname, `/.github/workflows/cron/${now.toISOString()}.yml`), yamlStr, 'utf8');
+   fs.writeFileSync(Path.join(__dirname, `/.github/workflows/${now.toISOString()}.yml`), yamlStr, 'utf8');
 })();

@@ -33,7 +33,7 @@ jobs:
       - name: Commit changes
         uses: EndBug/add-and-commit@v7
         with:
-          author_name: prakash
-          author_email: prakash106kumar@gmail.com
-          message: 'Add new cron job'
+          author_name: 'prakash'
+          author_email: 'prakash106kumar@gmail.com'
+          message: 'add new cron job'
           add: '*.yml'
