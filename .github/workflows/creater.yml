@@ -21,29 +21,25 @@ jobs:
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
-    jobs: 
-      create:
-        steps:
-          # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-          - uses: actions/checkout@v2
-          
-          # Install packages
-          - name: Install Packages
-            run: yarn install
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      # Install packages
+      - name: Install Packages
+        run: yarn install
 
-          # Runs a single command using the runners shell
-          - name: Create Cron Job
-            run: node create-cron-job.js
+      # Runs a single command using the runners shell
+      - name: Create Cron Job
+        run: node create-cron-job.js
 
-          - name: Check files
-            run: ls -all
-      commit:
-        needs: create
-        steps:          
-          - name: Commit changes
-            uses: EndBug/add-and-commit@v7
-            with:
-              author_name: prakash
-              author_email: prakash106kumar@gmail.com
-              message: 'initial commit'
-              add: '*.txt'
+      - name: Check files
+        run: ls -all
+        
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: prakash
+          author_email: prakash106kumar@gmail.com
+          message: 'new cron job'
+          add: '*.yml'
